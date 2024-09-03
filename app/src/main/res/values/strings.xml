@@ -10,4 +10,20 @@
     <string name="enter_the_receipt_number">Enter the receipt number ...</string>
     <string name="shipment_number">Shipment Number</string>
     <string name="tracking">Tracking</string>
+    <string name="truck_image">Truck image</string>
+    <string name="sender">Sender\n</string>
+    <string name="time">Time</string>
+    <string name="receiver">Receiver</string>
+    <string name="status">Status</string>
+    <string name="waiting_to_collect">Waiting to collect</string>
+    <string name="available_vehicles">Available Vehicles</string>
+    <string name="oceen_freight">Icean freight</string>
+    <string name="international">International</string>
+    <string name="cargo_freight">Cargo Freight</string>
+    <string name="reliable">Reliable</string>
+    <string name="air_freight">Air Freight</string>
+    <string name="home">Home</string>
+    <string name="calculate">Calculate</string>
+    <string name="shipment">Shipment</string>
+    <string name="profile">Profile</string>
 </resources>
