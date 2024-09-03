@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Shipment APP UI</string>
+    <string name="search">Search</string>
+    <string name="user_picture">User profile pic</string>
+    <string name="search_icon">Search icon</string>
+    <string name="your_location">Your location</string>
+    <string name="location_demo">Weatheimer, Illinois</string>
+    <string name="dropdown">Dropdown</string>
+    <string name="notification">Notification</string>
+    <string name="enter_the_receipt_number">Enter the receipt number ...</string>
+    <string name="shipment_number">Shipment Number</string>
+    <string name="tracking">Tracking</string>
+</resources>
