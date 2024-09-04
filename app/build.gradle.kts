@@ -1,6 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    kotlin("kapt")
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.google.hilt)
+
+
 }
 
 android {
@@ -18,6 +23,11 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        multiDexEnabled = true
+    }
+
+    packagingOptions{
+        excludes.add("META-INF/gradle/incremental.annotation.processors")
     }
 
     buildTypes {
@@ -48,6 +58,10 @@ android {
         }
     }
 }
+kapt {
+    correctErrorTypes = true
+}
+
 
 dependencies {
 
@@ -63,6 +77,9 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation)
     implementation(libs.accompanist.systemuicontroller)
+    implementation(libs.hilt.android)
+    implementation(libs.accompanist.flowlayout)
+    kapt(libs.hilt.complier)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

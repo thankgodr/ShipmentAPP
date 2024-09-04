@@ -26,4 +26,21 @@
     <string name="calculate">Calculate</string>
     <string name="shipment">Shipment</string>
     <string name="profile">Profile</string>
+    <string name="back">Back</string>
+    <string name="destination">Destination</string>
+    <string name="packaging">Packaging</string>
+    <string name="what_are_you_sending">What are you sending?</string>
+    <string name="categories">Categories</string>
+    <string name="continue_propmt">Continue</string>
+    <string name="sender_location">Sender location</string>
+    <string name="receiver_location">Receiver location</string>
+    <string name="aprox_weight">Approx weight</string>
+    <string name="shipmet_history">Shipment history</string>
+    <string name="pending">Pending</string>
+    <string name="completed">Completed</string>
+    <string name="in_progress">In progress</string>
+    <string name="canceled">Canceled</string>
+    <string name="all">All</string>
+    <string name="arriving_today">Arriving today!</string>
+    <string name="your_delivery">Your delivey, \n %1$s from %2$s \n is arriving today</string>
 </resources>

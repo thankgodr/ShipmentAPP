@@ -5,10 +5,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.OutlinedTextFieldDefaults
-import androidx.compose.material3.Text
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.OutlinedTextField
+import androidx.compose.material.Text
+import androidx.compose.material.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -35,9 +35,9 @@ fun ShipmentSearchField(
         onValueChange = onSearchTextChanged,
         modifier = modifier,
         shape = RoundedCornerShape(50.dp),
-        colors = OutlinedTextFieldDefaults.colors(
-            unfocusedContainerColor = backgroundColor,
-            focusedContainerColor = backgroundColor
+        colors = TextFieldDefaults.textFieldColors(
+            backgroundColor = backgroundColor,
+            focusedIndicatorColor = backgroundColor
         ),
         leadingIcon = {
             Image(
@@ -70,7 +70,7 @@ fun ShipmentSearchField(
         placeholder = {
             Text(
                 text = placeHolderText,
-                style = MaterialTheme.typography.bodySmall.copy(
+                style = MaterialTheme.typography.body2.copy(
                     color = Placeholder_Grey
                 )
             )

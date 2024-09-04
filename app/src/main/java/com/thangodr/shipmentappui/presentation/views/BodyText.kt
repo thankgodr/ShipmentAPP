@@ -1,7 +1,7 @@
 package com.thangodr.shipmentappui.presentation.views
 
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.TextUnit
 fun BodyText(
     modifier: Modifier = Modifier,
     color: Color = Color.Unspecified,
-    style: TextStyle = MaterialTheme.typography.bodyLarge,
+    style: TextStyle = MaterialTheme.typography.body1,
     textAlign: TextAlign? = null,
     maxLines: Int = Int.MAX_VALUE,
     lineHeight: TextUnit = TextUnit.Unspecified,

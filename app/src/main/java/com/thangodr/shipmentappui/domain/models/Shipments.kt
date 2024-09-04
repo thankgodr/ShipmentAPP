@@ -1,5 +1,7 @@
-package com.thangodr.shipmentappui.domain
+package com.thangodr.shipmentappui.domain.models
 
+import androidx.annotation.StringRes
+import com.thangodr.shipmentappui.R
 import java.util.Date
 
 data class Shipments(
@@ -15,11 +17,9 @@ data class Shipments(
     val deliveryDay: Date
 )
 
-enum class ShipmentStatus {
-    Pending, Completed, InProgress, Canceled
-}
-
-enum class ShipementCategory(val pricePerKG: Double){
-    Electronic(10.0, ), Document(5.0), Glass(6.0),
-    Food(90.0),
+enum class ShipmentStatus(@StringRes val nameRes: Int) {
+    Pending(R.string.pending),
+    Completed(R.string.completed),
+    InProgress(R.string.in_progress),
+    Canceled(R.string.canceled),
 }
