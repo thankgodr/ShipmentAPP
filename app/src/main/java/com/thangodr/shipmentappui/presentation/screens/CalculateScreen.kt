@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.thangodr.shipmentappui.R
-import com.thangodr.shipmentappui.presentation.viewmodels.CalculateScrenData
+import com.thangodr.shipmentappui.presentation.viewmodels.CalculateScreenData
 import com.thangodr.shipmentappui.presentation.views.BodyText
 import com.thangodr.shipmentappui.presentation.views.Header
 import com.thangodr.shipmentappui.presentation.views.ShipmentButtton
@@ -33,8 +33,9 @@ import com.thangodr.shipmentappui.ui.theme.APP_WHITE_BG
 @Composable
 fun CalculateScreen(
     onBackClicked: () -> Unit,
-    screenDataProvider: () -> CalculateScrenData,
-    onUpdateScreenData: (CalculateScrenData) -> Unit,
+    screenDataProvider: () -> CalculateScreenData,
+    onContinueClicked: () -> Unit,
+    onUpdateScreenData: (CalculateScreenData) -> Unit,
 ){
     val screenData = screenDataProvider()
     val focusManager = LocalFocusManager.current
@@ -206,7 +207,7 @@ fun CalculateScreen(
                 width = Dimension.fillToConstraints
             }
         ) {
-
+            onContinueClicked()
         }
 
 

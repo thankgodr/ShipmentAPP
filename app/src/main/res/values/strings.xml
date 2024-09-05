@@ -43,4 +43,7 @@
     <string name="all">All</string>
     <string name="arriving_today">Arriving today!</string>
     <string name="your_delivery">Your delivey, \n %1$s from %2$s \n is arriving today</string>
+    <string name="total_estimate_amount">Total Estimate Amount</string>
+    <string name="this_amount_is_estimated_long_text">This amount is estimated this will vary \n if you change your location or weight</string>
+    <string name="back_to_home">Back to home</string>
 </resources>

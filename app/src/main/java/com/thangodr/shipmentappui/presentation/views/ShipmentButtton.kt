@@ -12,7 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.thangodr.shipmentappui.ui.theme.APP_ORANGE
-import com.thangodr.shipmentappui.ui.theme.FIELD_GREY
 
 @Composable
 fun ShipmentButtton(

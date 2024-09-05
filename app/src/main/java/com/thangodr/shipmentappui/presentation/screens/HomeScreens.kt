@@ -17,7 +17,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -100,7 +99,7 @@ fun HomeScreens(
               }
               .background(APP_BLUE)
           ) {
-              val (profilePic, locationArror, yourLocationTitle, locationvalue, locationDropDown, notification, backBtn,searchView, spacer) = createRefs()
+              val (profilePic, locationArrow, yourLocationTitle, locationValue, locationDropDown, notification, backBtn,searchView, spacer) = createRefs()
 
               if(!searchHasFocus){
                   Image(
@@ -120,7 +119,7 @@ fun HomeScreens(
                       contentDescription = stringResource(id = R.string.search_icon),
                       modifier = Modifier
                           .size(16.dp)
-                          .constrainAs(locationArror) {
+                          .constrainAs(locationArrow) {
                               top.linkTo(parent.top, 24.dp)
                               start.linkTo(profilePic.end, 8.dp)
                           }
@@ -129,16 +128,16 @@ fun HomeScreens(
                   BodyText(
                       text = stringResource(id = R.string.your_location),
                       modifier = Modifier.constrainAs(yourLocationTitle){
-                          centerVerticallyTo(locationArror)
-                          start.linkTo(locationArror.end, 4.dp)
+                          centerVerticallyTo(locationArrow)
+                          start.linkTo(locationArrow.end, 4.dp)
                       },
                       color = Color(0xFFaa99d5)
                   )
 
                   BodyText(
                       text = stringResource(id = R.string.location_demo),
-                      modifier = Modifier.constrainAs(locationvalue){
-                          top.linkTo(locationArror.bottom, 4.dp)
+                      modifier = Modifier.constrainAs(locationValue){
+                          top.linkTo(locationArrow.bottom, 4.dp)
                           start.linkTo(profilePic.end, 8.dp)
                       },
                       color = APP_WHite
@@ -148,8 +147,8 @@ fun HomeScreens(
                       imageVector = Icons.Default.KeyboardArrowDown,
                       contentDescription = stringResource(id = R.string.dropdown),
                       modifier = Modifier.constrainAs(locationDropDown){
-                          centerVerticallyTo(locationvalue)
-                          start.linkTo(locationvalue.end, 4.dp)
+                          centerVerticallyTo(locationValue)
+                          start.linkTo(locationValue.end, 4.dp)
                       },
                       tint = APP_WHite
                   )
@@ -351,7 +350,7 @@ fun HomeShipmentCard(
         ConstraintLayout(modifier = Modifier.fillMaxWidth()) {
             val (shipmentNumberTitle, shipmentNumberValue, cargoImageView,
                 divider, senderImage, senderText, senderLocation, timeText) = createRefs()
-            val (receiverImage, receiverTitle, receiverLocation, status, divider2, addBtn, spacer) = createRefs()
+            val (receiverImage, receiverTitle, receiverLocation, status, divider2, addBtn) = createRefs()
 
             BodyText(
                 text = stringResource(id = R.string.shipment_number),
@@ -467,7 +466,7 @@ fun HomeShipmentCard(
             }
 
 
-            //Receiver sction
+            //Receiver section
 
             Card(
                 modifier = Modifier
@@ -494,7 +493,7 @@ fun HomeShipmentCard(
                 )
             )
             BodyText(
-                text = "Chikago, 2345",
+                text = "Chicago, 2345",
                 modifier = Modifier.constrainAs(receiverLocation){
                     top.linkTo(receiverTitle.bottom)
                     start.linkTo(senderImage.end, 6.dp)
@@ -540,7 +539,7 @@ fun HomeShipmentCard(
 
             Button(
                 modifier = Modifier.constrainAs(addBtn){
-                    top.linkTo(divider2.bottom,)
+                    top.linkTo(divider2.bottom)
                     start.linkTo(parent.start, 20.dp)
                     end.linkTo(parent.end)
                     width = Dimension.fillToConstraints

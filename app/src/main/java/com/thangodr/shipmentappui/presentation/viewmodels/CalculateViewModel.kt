@@ -8,11 +8,11 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class CalcualteViewModel @Inject constructor(): ViewModel() {
-    var screenData by mutableStateOf(CalculateScrenData())
+class CalculateViewModel @Inject constructor(): ViewModel() {
+    var screenData by mutableStateOf(CalculateScreenData())
 }
 
-data class CalculateScrenData(
+data class CalculateScreenData(
     val senderLocation : String = "",
     val receiverLocation: String = "",
     val weight: String = "",

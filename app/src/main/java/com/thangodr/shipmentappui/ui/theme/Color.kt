@@ -1,7 +1,6 @@
 package com.thangodr.shipmentappui.ui.theme
 
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.Placeholder
 
 val APP_BLUE = Color(0xFF543b9c)
 val APP_ORANGE = Color(0xFFF7941D)

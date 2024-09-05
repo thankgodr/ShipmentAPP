@@ -8,8 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -19,8 +19,9 @@ import com.thangodr.shipmentappui.domain.models.ShipmentStatus
 import com.thangodr.shipmentappui.presentation.screens.CalculateScreen
 import com.thangodr.shipmentappui.presentation.screens.HomeScreens
 import com.thangodr.shipmentappui.presentation.screens.ProfileScreen
+import com.thangodr.shipmentappui.presentation.screens.ShipmentEstimateScreen
 import com.thangodr.shipmentappui.presentation.screens.ShipmentScreen
-import com.thangodr.shipmentappui.presentation.viewmodels.CalcualteViewModel
+import com.thangodr.shipmentappui.presentation.viewmodels.CalculateViewModel
 import com.thangodr.shipmentappui.presentation.viewmodels.HomeViewModel
 import com.thangodr.shipmentappui.ui.theme.APP_BLUE
 
@@ -29,6 +30,7 @@ object MainScreenPath {
     const val DASHBOARD = "APP_DASHBOARD"
     const val SHIPMENT = "APP_SHIPTMENT"
     const val PROFILE = "APP_PROFILE"
+    const val ESTIMATE = "APP_ESTIMATE"
 }
 
 @Composable
@@ -49,7 +51,7 @@ fun MainScreenView(){
            }
         },
         content = {
-            Box(modifier = Modifier.padding(it)){
+            Box(modifier = Modifier.padding(it).padding(bottom = 16.dp)){
                 MainScreenContent(navController, bottomNavViewModel)
             }
         },
@@ -63,7 +65,7 @@ private fun MainScreenContent(
     bottomNavViewModel: BottomNavViewModel,
 ){
     val homeViewModel: HomeViewModel = viewModel()
-    val calcualteViewModel: CalcualteViewModel = viewModel()
+    val calcualteViewModel: CalculateViewModel = viewModel()
     LaunchedEffect(Unit){
         homeViewModel.getShipments()
     }
@@ -115,12 +117,23 @@ private fun MainScreenContent(
                 },
                 screenDataProvider = {
                     calcualteViewModel.screenData
+                },
+                onContinueClicked = {
+                    navController.navigate(MainScreenPath.ESTIMATE)
                 }
             )
         }
         composable(MainScreenPath.PROFILE){
             bottomNavViewModel.showNav = true
             ProfileScreen()
+        }
+
+        composable(MainScreenPath.ESTIMATE){
+            bottomNavViewModel.showNav = false
+            ShipmentEstimateScreen {
+                navController.popBackStack(MainScreenPath.DASHBOARD, false)
+            }
+
         }
     }
 }

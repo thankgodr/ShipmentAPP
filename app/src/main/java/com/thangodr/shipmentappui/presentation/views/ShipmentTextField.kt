@@ -32,6 +32,7 @@ fun ShipmentTextField(
       OutlinedTextField(
           value = text,
           onValueChange = onTextChange,
+          maxLines = 1,
           modifier = modifier,
           shape = RoundedCornerShape( 12.dp),
           colors = TextFieldDefaults.textFieldColors(

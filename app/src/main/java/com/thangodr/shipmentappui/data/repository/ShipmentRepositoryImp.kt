@@ -9,7 +9,7 @@ import kotlin.random.Random
 
 class ShipmentRepositoryImp: ShipmentRepository {
     override suspend fun getShipments(): List<Shipments> {
-       return  generateRandomShipments(10)
+       return  generateRandomShipments(9)
     }
 
     //Just for test sakes

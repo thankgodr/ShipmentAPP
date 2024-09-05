@@ -1,7 +1,5 @@
 package com.thangodr.shipmentappui.presentation.viewmodels
 
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -34,7 +32,7 @@ class HomeViewModel @Inject constructor(
         screenData = screenData.copy(
             isLoading = false,
             shipmentList = list,
-            filteredList =  if(screenData.filteredList.isEmpty()) list else screenData.filteredList
+            filteredList = screenData.filteredList.ifEmpty { list }
         )
         _shipments.value = ResourceStatus.Success(list) //simulating network calls
     }
